@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login-style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <main class="main-login">
+        <div class="left-login">
+            <img src="../img/logo.png">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Register</h1>
+                <div class="textfield">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username" id="username">
+                </div>
+                <div class="textfield">
+                    <label for="dni">DNI</label>
+                    <input type="text" name="dni" placeholder="DNI" id="dni">
+                </div>
+                <div class="textfield">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Email" id="email">
+                </div>
+                <div class="textfield">
+                    <label for="IBAN">IBAN</label>
+                    <input type="text" name="IBAN" placeholder="IBAN" id="IBAN">
+                </div>
+                <div class="textfield">
+                    <label for="phone">Phone number</label>
+                    <input type="text" name="text" placeholder="Phone number" id="phone">
+                </div>
+                <div class="textfield">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password" id="password">
+                </div>
+                <div class="textfield">
+                    <p id="login-error" style="color:red"></p>
+                </div>
+                <button class="btn-login" id="btn-register">Create account!</button>
+                <div class="container d-flex justify-content-around">
+                    <a class="btn-primary" href="/login.html">Login</a>
+                    <a class="btn-primary" href="/index.html">Go back to home page</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
