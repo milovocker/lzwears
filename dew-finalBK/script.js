@@ -21,6 +21,8 @@ class OnlineShop {
 
         $("#btn-register").on("click", (event) => {
             event.preventDefault();
+            this.username = null;
+            this.password = null;
             this.registerUser(this.username.val(), this.password.val(), this.dni.val(), this.email.val(), this.iban.val(), this.phone.val())
             
         });
@@ -28,6 +30,11 @@ class OnlineShop {
         $('.addToCart').on('click', (event) => {
             event.preventDefault();
             this.addItemsToCart();
+        });
+
+        $('.carousel-item').on('click', (event) => {
+            event.preventDefault();
+            this.showCarouselItem();
         });
 
     }
@@ -104,7 +111,7 @@ class OnlineShop {
                     this.loggedIn = true;
                     sessionStorage.setItem('username', username);
                     this.username = username;
-                    window.location.href = "/index.html";
+                    window.location.href = "index.html";
                 }
             },
             error: (jqXHR, textStatus, errorThrown) => {
@@ -117,6 +124,10 @@ class OnlineShop {
     
     addItemsToCart() {
         alert('Item added to cart');
+    }
+
+    showCarouselItem(){
+        
     }
 }
 
@@ -132,5 +143,40 @@ $(document).ready(() => {
     } else {
         myshop.welcomeMsg();  // Muestra el mensaje de bienvenida genérico
     }
+
+    const app = Vue.createApp({
+        //root component including data, methods
+        data() {
+          return {
+
+            langs: {
+                esp: {
+                    home: 'Inicio',
+                    products: 'Productos',
+                    about: 'Sobre Nosotros',
+                    language: 'Idioma'
+                },
+                eng: {
+                    home: 'Home',
+                    products: 'Products',
+                    about: 'About us',
+                    language: 'Language'
+                }
+            },
+            activeLang: langs[esp],
+            see :true}
+         },
+        methods: {
+           toggleShow(e) {
+            e.preventDefault()
+            this.see =  !this.see;
+          }, 
+          changelanguage(e) {
+            e.preventDefault()
+          }
+          }
+        })
+      
+        app.mount('#app')
 
 });
