@@ -160,10 +160,10 @@ $(document).ready(() => {
                     home: 'Home',
                     products: 'Products',
                     about: 'About us',
-                    language: 'Language'
+                    
                 }
             },
-            activeLang: langs[esp],
+            activeLang: 'Español',
             see :true}
          },
         methods: {
@@ -173,6 +173,7 @@ $(document).ready(() => {
           }, 
           changelanguage(e) {
             e.preventDefault()
+            this.activeLang =  'English';
           }
           }
         })
