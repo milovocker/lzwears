@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
@@ -23,7 +25,7 @@ $newName = $_GET['username'];
 $newEmail = $_GET['email'];
 $newPassword = $_GET['password'];
 $newIBAN = $_GET['iban'];
-$newNumber = $_GET['phone'];
+$newNumber = $_GET['phoneNumber'];
 
 // Preparar y ejecutar la consulta segura
 $stmt = $conn->prepare("INSERT INTO users (dni, name, email, password, IBAN, phoneNumber) VALUES (?, ?, ?, ?, ?, ?)");

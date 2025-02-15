@@ -15,39 +15,43 @@
 <body class="bg-light">
   <div id="app">
     <!--Menu-->
-    <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom">
+    <header class="d-flex flex-wrap justify-content-around align-items-center py-3 mb-4 border-bottom">
       <div class="menutitle d-flex justify-content-between align-items-center ml-3">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          <img src="img/logo.png" alt="" height="75px">
-        </a>
-        <h1>LZ WEARS MILO</h1>
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+              <img src="img/logo.png" alt="" height="75px">
+          </a>
+          <h1>LZ WEARS MILO</h1>
       </div>
       
-      <ul class="nav nav-pills d-flex justify-content-between" style="width: 400px; margin-right: 30px;">
-        <li class=""><a href="" class="nav-item">Home</a></li>
-        <li class="dropdown"><a href="" class="nav-item">
-          Products
-          <div class="dropdown-content">
-            <p>T-shirts</p>
-            <p>Sweaters</p>
-            <p>Trousers</p>
-            <p>things</p>
-            <p>Accesories</p>
-          </div>
-        </a></li>
-        <li class="dropdown"><a href="" class="nav-item" @click="toggleLanguage">
-          Language
-          <div class="dropdown-content">
-            <p><img src="/img/flag.png" alt=""           class="flag" id="spanishLang" @click="changeLanguage"></p>
-            <p><img src="/img/united-kingdom.png" alt="" class="flag" id="englishLang" @click="changeLanguage"></p>
-          </div>
-        </a></li>
-        <li class=""><a href="" class="nav-item">About us</a></li>
-        <li class=""><a href="" class="nav-item" @click="toggleShow"><i class="bi bi-cart"></i></a></li>
-        <li class=""><a href="login.html" class="nav-item"><i class="bi bi-person-circle"></i></a></li>
+      <ul class="nav nav-pills d-flex justify-content-between" style="width: 600px; margin-right: 30px;">
+          <li><a href="" class="nav-item">{{ translated.home }}</a></li>
+          <li class="dropdown">
+              <a href="" class="nav-item">
+                  {{ translated.products }}
+                  <div class="dropdown-content">
+                      <p class="dropdownTags" id="tshirts">{{ translated.tshirts }}</p>
+                      <p class="dropdownTags" id="sweaters">{{ translated.sweaters }}</p>
+                      <p class="dropdownTags" id="pants">{{ translated.pants }}</p>
+                      <p class="dropdownTags" id="shoes">{{ translated.shoes }}</p>
+                      <p class="dropdownTags" id="accesories">{{ translated.accesories }}</p>
+                  </div>
+              </a>
+          </li>
+          <li class="dropdown">
+              <a href="" class="nav-item">
+                  {{ translated.language }}
+                  <div class="dropdown-content">
+                      <p><img src="/img/flag.png" alt="Español" class="flag" @click="changeLanguage($event, 'esp')"></p>
+                      <p><img src="/img/united-kingdom.png" alt="English" class="flag" @click="changeLanguage($event, 'eng')"></p>
+                  </div>
+              </a>
+          </li>
+          
+          <li><a href="" class="nav-item">{{ translated.about }}</a></li>
+          <li><a href="" class="nav-item" @click="toggleShow"><i class="bi bi-cart"></i></a></li>
+          <li><a href="login.html" class="nav-item"><i class="bi bi-person-circle"></i></a></li>
       </ul>
-    </header>
+  </header>
 
     <!--Product roulette-->
     <script>
@@ -91,8 +95,8 @@
         <div id="div1">
           <ul>
             <li><img src="img/tshirts/alemania.png" alt="0"></li>
-            <li><img src="img/tshirts/argentina.png" alt="1"></li>
-            <li><img src="img/tshirts/brasil.png" alt="2"></li>
+            <li><img src="img/sweaters/Project Paris Crema.png" alt="1"></li>
+            <li><img src="img/shoes/Adidas Samba.png" alt="2"></li>
             <li><img src="img/tshirts/francia.png" alt="3"></li>
             <li><img src="img/tshirts/españa.png" alt="4"></li>
           </ul>
@@ -102,7 +106,7 @@
     </div>
 
     <!--Main section-->
-    <main>
+    <main class="d-flex flex-column justify-content-center align-items-center">
       <div class="main-div d-flex flex-column">
 
         <div id="prod-cart" class="d-flex justify-content-around">
@@ -111,7 +115,7 @@
             <img src="img/logo.png" alt="">
           </div>
 
-          <div id="cart-container" v-if="see">
+          <div id="cart-container" v-if="see" class="d-flex flex-column justify-content-center align-items-center">
             <h3>Your Cart<i class="bi bi-cart"></i></h3>
             <hr>
           </div>
